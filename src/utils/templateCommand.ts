@@ -17,6 +17,7 @@ import { CreateOutput } from '@salesforce/templates/lib/utils/types';
 import { AnyJson } from '@salesforce/ts-types';
 
 import TerminalAdapter = require('yeoman-environment/lib/adapter');
+import Environment = require('yeoman-environment');
 import { defaultApiVersion } from '../constants';
 import { MessageUtil } from './messageUtil';
 
@@ -44,24 +45,24 @@ export abstract class TemplateCommand extends SfCommand<CreateOutput | AnyJson> 
     }
   }
 
-  public async runGenerator(generator: yeomanGenerator.GeneratorConstructor): Promise<CreateOutput | AnyJson> {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const { flags } = await this.parse(TemplateCommand);
-
+  public async runGenerator(
+    generator: yeomanGenerator.GeneratorConstructor,
+    options: Environment.Options
+  ): Promise<CreateOutput | AnyJson> {
     // Can't specify a default value the normal way for apiversion, so set it here
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    if (!flags.apiversion) {
-      flags.apiversion = await TemplateCommand.getApiVersion(); // eslint-disable-line @typescript-eslint/no-unsafe-member-access
+    if (!options.apiversion) {
+      options.apiversion = await TemplateCommand.getApiVersion();
     }
 
     const adapter = new ForceGeneratorAdapter();
     const env = yeoman.createEnv(undefined, undefined, adapter as unknown as TerminalAdapter);
     env.registerStub(generator, 'generator');
 
-    env.run('generator', flags as yeoman.Callback);
-    const targetDir = path.resolve(flags.outputdir); // eslint-disable-line @typescript-eslint/no-unsafe-member-access
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    if (flags.json) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    await env.run('generator', options); // eslint-disable-line @typescript-eslint/await-thenable
+    const targetDir = path.resolve(options.outputdir);
+    if (options.json) {
       return TemplateCommand.buildJson(adapter, targetDir);
     } else {
       this.log(MessageUtil.get('TargetDirOutput', [targetDir]));
@@ -69,6 +70,4 @@ export abstract class TemplateCommand extends SfCommand<CreateOutput | AnyJson> 
       return {};
     }
   }
-
-  public abstract run(): Promise<CreateOutput | AnyJson>;
 }

@@ -20,10 +20,10 @@ export default class GenerateProject extends TemplateCommand {
     '$ sfdx force:project:create --projectname mywork --defaultpackagedir myapp --manifest',
     '$ sfdx force:project:create --projectname mywork --template empty',
   ];
-  public static help = MessageUtil.buildHelpText(GenerateProject.examples, false);
+  // public static help = MessageUtil.buildHelpText(GenerateProject.examples, false);
   public static description = MessageUtil.get('ProjectLongDescription');
 
-  public flags = {
+  public static flags = {
     projectname: Flags.string({
       char: 'n',
       summary: MessageUtil.get('ProjectNameFlagDescription'),
@@ -70,12 +70,16 @@ export default class GenerateProject extends TemplateCommand {
   };
 
   public async run(): Promise<CreateOutput | AnyJson> {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    // const { flags } = await this.parse(GenerateProject);
+    const { flags } = await this.parse(GenerateProject);
+
+    const options = {
+      ...flags,
+      ns: flags.namespace,
+    };
 
     // namespace is a reserved keyword for the generator
-    // flags.ns = flags.namespace;
+    delete options.namespace;
 
-    return this.runGenerator(ProjectGenerator);
+    return this.runGenerator(ProjectGenerator, options);
   }
 }

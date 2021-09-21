@@ -20,7 +20,6 @@ export default class GenerateProject extends TemplateCommand {
     '$ sfdx force:project:create --projectname mywork --defaultpackagedir myapp --manifest',
     '$ sfdx force:project:create --projectname mywork --template empty',
   ];
-  // public static help = MessageUtil.buildHelpText(GenerateProject.examples, false);
   public static description = MessageUtil.get('ProjectLongDescription');
 
   public static flags = {

@@ -12,6 +12,8 @@ import { AnyJson } from '@salesforce/ts-types';
 
 import { MessageUtil, TemplateCommand } from '../../utils';
 
+export type GenerateOutput = CreateOutput | AnyJson;
+
 export default class GenerateProject extends TemplateCommand {
   public static summary = MessageUtil.get('ProjectDescription');
   public static examples = [
@@ -68,7 +70,7 @@ export default class GenerateProject extends TemplateCommand {
     }),
   };
 
-  public async run(): Promise<CreateOutput | AnyJson> {
+  public async run(): Promise<GenerateOutput> {
     const { flags } = await this.parse(GenerateProject);
 
     const options = {

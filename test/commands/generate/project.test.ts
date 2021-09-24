@@ -54,12 +54,13 @@ describe('./src/commands/generate/project.ts', () => {
 
       // .args[0][1] corresponds to the first time runGeneratorStub is called and the second argument passed into that call
       expect(runGeneratorStub.args[0][1]).to.deep.equal({
-        projectname: 'theBestProjectEver',
-        template: 'standard',
-        outputdir: 'theBestOutputDirEver',
         defaultpackagedir: 'theBestPackageDirEver',
         loginurl: 'https://login.salesforce.com',
+        manifest: undefined,
         ns: '',
+        outputdir: 'theBestOutputDirEver',
+        projectname: 'theBestProjectEver',
+        template: 'standard',
       });
     });
   });

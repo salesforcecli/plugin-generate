@@ -1,0 +1,3 @@
+# TargetDirOutput
+
+target dir = %s

@@ -10,8 +10,8 @@ import * as path from 'path';
 import * as yeoman from 'yeoman-environment';
 import * as yeomanGenerator from 'yeoman-generator';
 
+import { ConfigAggregator, Messages } from '@salesforce/core';
 import { SfCommand } from '@salesforce/sf-plugins-core';
-import { ConfigAggregator } from '@salesforce/core';
 import { ForceGeneratorAdapter } from '@salesforce/templates/lib/utils';
 import { CreateOutput } from '@salesforce/templates/lib/utils/types';
 import { AnyJson } from '@salesforce/ts-types';
@@ -19,7 +19,9 @@ import { AnyJson } from '@salesforce/ts-types';
 import TerminalAdapter = require('yeoman-environment/lib/adapter');
 import Environment = require('yeoman-environment');
 import { defaultApiVersion } from '../constants';
-import { MessageUtil } from './messageUtil';
+
+Messages.importMessagesDirectory(__dirname);
+const messages = Messages.loadMessages('@salesforce/plugin-generate', 'templateCommand');
 
 export abstract class TemplateCommand extends SfCommand<CreateOutput | AnyJson> {
   private static API_VERSION = 'apiVersion';
@@ -65,7 +67,7 @@ export abstract class TemplateCommand extends SfCommand<CreateOutput | AnyJson> 
     if (options.json) {
       return TemplateCommand.buildJson(adapter, targetDir);
     } else {
-      this.log(MessageUtil.get('TargetDirOutput', [targetDir]));
+      this.log(messages.getMessage('TargetDirOutput', [targetDir]));
       this.log(adapter.log.getOutput());
       return {};
     }

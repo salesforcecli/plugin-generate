@@ -75,7 +75,7 @@ export default class GenerateProject extends TemplateCommand {
     const options = {
       defaultpackagedir: flags['default-package-dir'],
       loginurl: flags['login-url'],
-      manifest: flags.manifest,
+      manifest: flags.manifest ?? false,
       ns: flags.namespace,
       outputdir: flags['output-dir'],
       projectname: flags.name,

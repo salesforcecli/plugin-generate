@@ -49,19 +49,42 @@ describe('./src/commands/generate/project.ts', () => {
       process.argv[5] = 'theBestOutputDirEver';
       process.argv[6] = '-p';
       process.argv[7] = 'theBestPackageDirEver';
+      process.argv[8] = '-l';
+      process.argv[9] = 'theBestLoginUrlEver';
+      process.argv[10] = '-t';
+      process.argv[11] = 'empty';
+      process.argv[12] = '-x';
 
       await GenerateProject.run();
 
       // .args[0][1] corresponds to the first time runGeneratorStub is called and the second argument passed into that call
       expect(runGeneratorStub.args[0][1]).to.deep.equal({
         defaultpackagedir: 'theBestPackageDirEver',
-        loginurl: 'https://login.salesforce.com',
-        manifest: undefined,
+        loginurl: 'theBestLoginUrlEver',
+        manifest: true,
         ns: '',
         outputdir: 'theBestOutputDirEver',
         projectname: 'theBestProjectEver',
-        template: 'standard',
+        template: 'empty',
       });
+    });
+
+    it('should set manifest flag to false when not passed in', async () => {
+      await GenerateProject.run();
+
+      // .args[0][1] corresponds to the first time runGeneratorStub is called and the second argument passed into that call
+      expect(runGeneratorStub.args[0][1]).to.contain({ manifest: false });
+    });
+
+    it('should set pass in the namespace flag as ns', async () => {
+      process.argv[4] = '--namespace';
+      process.argv[5] = 'theBestNamespaceEver';
+
+      await GenerateProject.run();
+
+      // .args[0][1] corresponds to the first time runGeneratorStub is called and the second argument passed into that call
+      expect(runGeneratorStub.args[0][1]).to.contain({ ns: 'theBestNamespaceEver' });
+      expect(runGeneratorStub.args[0][1]).to.not.haveOwnProperty('namespace');
     });
   });
 });

@@ -2,6 +2,6 @@
   {
     "command": "generate:project",
     "plugin": "@salesforce/plugin-generate",
-    "flags": ["defaultpackagedir", "loginurl", "manifest", "namespace", "outputdir", "projectname", "template"]
+    "flags": ["default-package-dir", "login-url", "manifest", "name", "namespace", "output-dir", "template"]
   }
 ]

@@ -9,14 +9,11 @@ import { Flags } from '@oclif/core';
 import { Messages } from '@salesforce/core';
 import ProjectGenerator from '@salesforce/templates/lib/generators/projectGenerator';
 import { CreateOutput } from '@salesforce/templates/lib/utils/types';
-import { AnyJson } from '@salesforce/ts-types';
 
 import { TemplateCommand } from '../../utils';
 
 Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages('@salesforce/plugin-generate', 'generate.project');
-
-export type GenerateOutput = CreateOutput | AnyJson;
 
 export default class GenerateProject extends TemplateCommand {
   public static summary = messages.getMessage('summary');
@@ -69,7 +66,7 @@ export default class GenerateProject extends TemplateCommand {
     }),
   };
 
-  public async run(): Promise<GenerateOutput> {
+  public async run(): Promise<CreateOutput> {
     const { flags } = await this.parse(GenerateProject);
 
     const options = {

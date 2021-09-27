@@ -9,7 +9,7 @@ import { rm } from 'shelljs';
 import { execCmd, TestSession } from '@salesforce/cli-plugins-testkit';
 import { expect } from 'chai';
 import { Env } from '@salesforce/kit';
-import { GenerateOutput } from '../../../src/commands/generate/project';
+import { CreateOutput } from '@salesforce/templates/lib/utils/types';
 
 let testSession: TestSession;
 
@@ -32,7 +32,7 @@ describe('generate project NUTs', () => {
 
   it('generate a project', () => {
     const command = 'generate project -n testProj';
-    const stdout = execCmd<GenerateOutput>(command, { cli: 'sf', ensureExitCode: 0 }).shellOutput.stdout;
+    const stdout = execCmd<CreateOutput>(command, { cli: 'sf', ensureExitCode: 0 }).shellOutput.stdout;
 
     expect(stdout).to.match(/create testProj/);
   });

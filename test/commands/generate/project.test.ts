@@ -25,7 +25,7 @@ describe('./src/commands/generate/project.ts', () => {
     process.argv = process.argv.slice(0, 2);
   });
 
-  describe('build', () => {
+  describe('sf generate project', () => {
     let runGeneratorStub: sinon.SinonStub;
 
     beforeEach(() => {

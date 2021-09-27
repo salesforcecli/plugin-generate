@@ -8,7 +8,7 @@
     "@oclif/core": "^0.5.39",
     "@salesforce/core": "^3.6.4",
     "@salesforce/sf-plugins-core": "^0.0.25",
-    "@salesforce/templates": "^52.1.0",
+    "@salesforce/templates": "^52.2.0",
     "tslib": "^2"
   },
   "devDependencies": {
@@ -107,6 +107,7 @@
     "test:deprecation-policy": "./bin/dev snapshot:compare",
     "test:json-schema": "./bin/dev schema:compare",
     "test:nuts": "nyc mocha \"**/*.nut.ts\" --slow 4500 --timeout 600000 --parallel",
+    "test:unit": "mocha \"test/**/*.test.ts\"",
     "version": "oclif readme"
   },
   "husky": {

@@ -14,7 +14,6 @@ import { ConfigAggregator, Messages } from '@salesforce/core';
 import { SfCommand } from '@salesforce/sf-plugins-core';
 import { ForceGeneratorAdapter } from '@salesforce/templates/lib/utils';
 import { CreateOutput } from '@salesforce/templates/lib/utils/types';
-import { AnyJson } from '@salesforce/ts-types';
 
 import TerminalAdapter = require('yeoman-environment/lib/adapter');
 import Environment = require('yeoman-environment');
@@ -23,7 +22,7 @@ import { defaultApiVersion } from '../constants';
 Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages('@salesforce/plugin-generate', 'templateCommand');
 
-export abstract class TemplateCommand extends SfCommand<CreateOutput | AnyJson> {
+export abstract class TemplateCommand extends SfCommand<CreateOutput> {
   private static API_VERSION = 'apiVersion';
 
   public static buildJson(adapter: ForceGeneratorAdapter, targetDir: string): CreateOutput {
@@ -50,8 +49,7 @@ export abstract class TemplateCommand extends SfCommand<CreateOutput | AnyJson> 
   public async runGenerator(
     generator: yeomanGenerator.GeneratorConstructor,
     options: Environment.Options
-  ): Promise<CreateOutput | AnyJson> {
-    // Can't specify a default value the normal way for apiversion, so set it here
+  ): Promise<CreateOutput> {
     if (!options.apiversion) {
       options.apiversion = await TemplateCommand.getApiVersion();
     }
@@ -64,12 +62,11 @@ export abstract class TemplateCommand extends SfCommand<CreateOutput | AnyJson> 
     // @ts-ignore
     await env.run('generator', options); // eslint-disable-line @typescript-eslint/await-thenable
     const targetDir = path.resolve(options.outputdir);
-    if (options.json) {
-      return TemplateCommand.buildJson(adapter, targetDir);
-    } else {
+    if (!options.json) {
       this.log(messages.getMessage('TargetDirOutput', [targetDir]));
       this.log(adapter.log.getOutput());
-      return {};
     }
+
+    return TemplateCommand.buildJson(adapter, targetDir);
   }
 }

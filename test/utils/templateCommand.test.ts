@@ -15,12 +15,12 @@ import * as yeomanGenerator from 'yeoman-generator';
 
 import { ConfigAggregator, Messages } from '@salesforce/core';
 import { SfCommand } from '@salesforce/sf-plugins-core';
+import { Log } from '@salesforce/templates/lib/utils';
 import { CreateOutput } from '@salesforce/templates/lib/utils/types';
 import { spyMethod, stubMethod } from '@salesforce/ts-sinon';
 
-import { Log } from '@salesforce/templates/lib/utils';
-import { TemplateCommand } from '../../src/utils/templateCommand';
 import { defaultApiVersion } from '../../src/constants';
+import { TemplateCommand } from '../../src/utils/templateCommand';
 
 chaiUse(sinonChai);
 

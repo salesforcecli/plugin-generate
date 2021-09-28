@@ -6,76 +6,79 @@
  */
 
 import { Flags } from '@oclif/core';
+import { Messages } from '@salesforce/core';
 import ProjectGenerator from '@salesforce/templates/lib/generators/projectGenerator';
 import { CreateOutput } from '@salesforce/templates/lib/utils/types';
-import { AnyJson } from '@salesforce/ts-types';
 
-import { MessageUtil, TemplateCommand } from '../../utils';
+import { TemplateCommand } from '../../utils';
+
+Messages.importMessagesDirectory(__dirname);
+const messages = Messages.loadMessages('@salesforce/plugin-generate', 'generate.project');
 
 export default class GenerateProject extends TemplateCommand {
-  public static summary = MessageUtil.get('ProjectDescription');
-  public static examples = [
-    '$ sfdx force:project:create --projectname mywork',
-    '$ sfdx force:project:create --projectname mywork --defaultpackagedir myapp',
-    '$ sfdx force:project:create --projectname mywork --defaultpackagedir myapp --manifest',
-    '$ sfdx force:project:create --projectname mywork --template empty',
-  ];
-  public static help = MessageUtil.buildHelpText(GenerateProject.examples, false);
-  public static description = MessageUtil.get('ProjectLongDescription');
+  public static summary = messages.getMessage('summary');
+  public static examples = messages.getMessages('examples');
+  public static description = messages.getMessage('description');
 
-  public flags = {
-    projectname: Flags.string({
-      char: 'n',
-      summary: MessageUtil.get('ProjectNameFlagDescription'),
-      description: MessageUtil.get('ProjectNameFlagLongDescription'),
-      required: true,
-    }),
-    template: Flags.string({
-      char: 't',
-      summary: MessageUtil.get('ProjectTemplateFlagDescription'),
-      description: MessageUtil.get('ProjectTemplateFlagLongDescription'),
-      default: 'standard',
-      options: ['standard', 'empty', 'analytics'],
-    }),
-    outputdir: Flags.string({
-      char: 'd',
-      summary: MessageUtil.get('OutputDirFlagDescription'),
-      description: MessageUtil.get('OutputDirFlagLongDescription'),
-      default: '.',
-    }),
-    namespace: Flags.string({
-      char: 's',
-      summary: MessageUtil.get('ProjectNamespaceFlagDescription'),
-      description: MessageUtil.get('ProjectNamespaceFlagLongDescription'),
-      default: '',
-    }),
-    defaultpackagedir: Flags.string({
+  public static flags = {
+    'default-package-dir': Flags.string({
       char: 'p',
-      summary: MessageUtil.get('ProjectPackageFlagDescription'),
-      description: MessageUtil.get('ProjectPackageFlagLongDescription'),
+      summary: messages.getMessage('flags.default-package-dir.summary'),
+      description: messages.getMessage('flags.default-package-dir.description'),
       default: 'force-app',
     }),
-    manifest: Flags.boolean({
-      char: 'x',
-      summary: MessageUtil.get('ProjectManifestFlagDescription'),
-      description: MessageUtil.get('ProjectManifestFlagLongDescription'),
-    }),
-    loginurl: Flags.string({
+    'login-url': Flags.string({
       char: 'l',
-      summary: MessageUtil.get('ProjectLoginUrlDescription'),
-      description: MessageUtil.get('ProjectLoginUrlLongDescription'),
+      summary: messages.getMessage('flags.login-url.summary'),
+      description: messages.getMessage('flags.login-url.description'),
       default: 'https://login.salesforce.com',
       hidden: true,
     }),
+    manifest: Flags.boolean({
+      char: 'x',
+      summary: messages.getMessage('flags.manifest.summary'),
+      description: messages.getMessage('flags.manifest.description'),
+    }),
+    name: Flags.string({
+      char: 'n',
+      summary: messages.getMessage('flags.name.summary'),
+      description: messages.getMessage('flags.name.description'),
+      required: true,
+    }),
+    namespace: Flags.string({
+      char: 's',
+      summary: messages.getMessage('flags.namespace.summary'),
+      description: messages.getMessage('flags.namespace.description'),
+      default: '',
+    }),
+    'output-dir': Flags.string({
+      char: 'd',
+      summary: messages.getMessage('flags.output-dir.summary'),
+      description: messages.getMessage('flags.output-dir.description'),
+      default: '.',
+    }),
+    template: Flags.string({
+      char: 't',
+      summary: messages.getMessage('flags.template.summary'),
+      description: messages.getMessage('flags.template.description'),
+      default: 'standard',
+      options: ['standard', 'empty', 'analytics'],
+    }),
   };
 
-  public async run(): Promise<CreateOutput | AnyJson> {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    // const { flags } = await this.parse(GenerateProject);
+  public async run(): Promise<CreateOutput> {
+    const { flags } = await this.parse(GenerateProject);
 
-    // namespace is a reserved keyword for the generator
-    // flags.ns = flags.namespace;
+    const options = {
+      defaultpackagedir: flags['default-package-dir'],
+      loginurl: flags['login-url'],
+      manifest: flags.manifest ?? false,
+      ns: flags.namespace,
+      outputdir: flags['output-dir'],
+      projectname: flags.name,
+      template: flags.template,
+    };
 
-    return this.runGenerator(ProjectGenerator);
+    return this.runGenerator(ProjectGenerator, options);
   }
 }

@@ -1,16 +1,14 @@
 {
   "name": "@salesforce/plugin-generate",
-  "description": "A template repository for sfdx plugins",
+  "description": "Commands to generate Salesforce projects from templates.",
   "version": "0.0.1",
   "author": "Salesforce",
   "bugs": "https://github.com/forcedotcom/cli/issues",
   "dependencies": {
-    "@oclif/core": "^0.5.38",
-    "@salesforce/core": "^3.6.1",
-    "@salesforce/sf-plugins-core": "^0.0.22",
-    "@salesforce/templates": "^52.1.0",
-    "@types/yeoman-environment": "^2.10.5",
-    "@types/yeoman-generator": "^5.2.5",
+    "@oclif/core": "^0.5.39",
+    "@salesforce/core": "^3.6.4",
+    "@salesforce/sf-plugins-core": "^0.0.25",
+    "@salesforce/templates": "^52.2.0",
     "tslib": "^2"
   },
   "devDependencies": {
@@ -21,6 +19,11 @@
     "@salesforce/plugin-command-reference": "^2.0.1",
     "@salesforce/prettier-config": "^0.0.2",
     "@salesforce/ts-sinon": "^1.3.21",
+    "@types/shelljs": "^0.8.9",
+    "@types/sinon-chai": "^3.2.5",
+    "@types/yeoman-assert": "^3.1.1",
+    "@types/yeoman-environment": "^2.10.5",
+    "@types/yeoman-generator": "^5.2.5",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "chai": "^4.3.4",
@@ -38,13 +41,15 @@
     "lint-staged": "^11.0.0",
     "mocha": "^8.4.0",
     "nyc": "^15.1.0",
-    "oclif": "^2.0.0-main.3",
+    "oclif": "^2.0.0-main.5",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.0",
     "shx": "0.3.3",
     "sinon": "^11.1.1",
+    "sinon-chai": "^3.7.0",
     "ts-node": "^10.0.0",
-    "typescript": "^4.1.3"
+    "typescript": "^4.4.3",
+    "yeoman-assert": "^3.1.1"
   },
   "config": {
     "commitizen": {
@@ -104,6 +109,7 @@
     "test:deprecation-policy": "./bin/dev snapshot:compare",
     "test:json-schema": "./bin/dev schema:compare",
     "test:nuts": "nyc mocha \"**/*.nut.ts\" --slow 4500 --timeout 600000 --parallel",
+    "test:unit": "mocha \"test/**/*.test.ts\"",
     "version": "oclif readme"
   },
   "husky": {

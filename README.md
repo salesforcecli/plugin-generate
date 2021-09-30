@@ -97,43 +97,101 @@ sfdx plugins
 ## Commands
 
 <!-- commands -->
+* [`sf generate project`](#sf-generate-project)
 
-- [`sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-helloorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+## `sf generate project`
 
-## `sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-print a greeting and your org IDs
+Generate a Salesforce DX project.
 
 ```
 USAGE
-  $ sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel
-  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ sf generate project -n <value> [--json] [-p <value>] [-x] [-s <value>] [-d <value>] [-t standard|empty|analytics]
 
-OPTIONS
-  -f, --force                                                                       example boolean flag
-  -n, --name=name                                                                   name to print
+FLAGS
+  -d, --output-dir=<value>           [default: .] Directory to store the newly created project files.
+  -n, --name=<value>                 (required) Name of the generated project.
+  -p, --default-package-dir=<value>  [default: force-app] Default package directory name.
+  -s, --namespace=<value>            Project associated namespace.
+  -t, --template=<option>            [default: standard] Template to use to create the project.
+                                     <options: standard|empty|analytics>
+  -x, --manifest                     Generate a manifest (package.xml) for change-set based development.
 
-  -u, --targetusername=targetusername                                               username or alias for the target
-                                                                                    org; overrides default target org
+GLOBAL FLAGS
+  --json  Format output as json.
 
-  -v, --targetdevhubusername=targetdevhubusername                                   username or alias for the dev hub
-                                                                                    org; overrides default dev hub org
+DESCRIPTION
+  Generate a Salesforce DX project.
 
-  --apiversion=apiversion                                                           override the api version used for
-                                                                                    api requests made by this command
+  A Salesforce DX project has a specific structure and a configuration file (sfdx-project.json) that identifies the
+  directory as a Salesforce DX project. This command generates the basic scaffolding to get you started.
 
-  --json                                                                            format output as json
+  By default, the generated sfdx-project.json file sets the sourceApiVersion property to the default API version
+  currently used by Salesforce CLI. To specify a different version, set the apiVersion configuration variable. For
+  example:
 
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
-                                                                                    this command invocation
+  sf config set apiVersion=53.0 --global
 
 EXAMPLES
-  $ sfdx hello:org --targetusername myOrg@example.com --targetdevhubusername devhub@org.com
-     Hello world! This is org: MyOrg and I will be around until Tue Mar 20 2018!
-     My hub org id is: 00Dxx000000001234
+  Generate a project called MyProject:
+  ​
+  $ sf generate project --name MyProject
+  ​
 
-  $ sfdx hello:org --name myname --targetusername myOrg@example.com
-     Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
+  Generate the minimum number of files and directories:
+  ​
+  $ sf generate project --name MyProject --template empty
+  ​
+
+  Generate the project in /Users/jdoe/sf-projects rather than the current directory:
+  ​
+  $ sf generate project --name MyProject --template empty --output-dir /Users/jdoe/sf-projects
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory to store the newly created project files.
+
+    The location can be an absolute path or relative to the current working directory.
+
+  -n, --name=<value>  Name of the generated project.
+
+    Creates a project directory with this name. Also sets the "name" property in the sfdx-project.json file to this
+    name.
+
+  -p, --default-package-dir=<value>  Default package directory name.
+
+    The default package directory name. Metadata items such as classes and Lightning bundles are placed inside this
+    folder.
+
+  -s, --namespace=<value>  Project associated namespace.
+
+    The namespace associated with this project and any connected scratch orgs.
+
+  -t, --template=standard|empty|analytics  Template to use to create the project.
+
+    The template determines the sample configuration files and directories that this command generates. For example, the
+    empty template provides these files and directory to get you started.
+
+    - .forceignore
+    - config/project-scratch-def.json
+    - sfdx-project.json
+    - package.json
+    - force-app (basic source directory structure)
+
+    The standard template provides a complete force-app directory structure so you know where to put your source. It
+    also provides additional files and scripts, especially useful when using Salesforce Extensions for VS Code. For
+    example:
+
+    - .gitignore: Use Git for version control.
+    - .prettierrc and .prettierignore: Use Prettier to format your Aura components.
+    - .vscode/extensions.json: When launched, Visual Studio Code, prompts you to install the recommended extensions for
+    your project.
+    - .vscode/launch.json: Configures Replay Debugger.
+    - .vscode/settings.json: Additional configuration settings.
+
+    The analytics template provides similar files and the force-app/main/default/waveTemplates directory.
+
+  -x, --manifest  Generate a manifest (package.xml) for change-set based development.
+
+    Generates a default manifest (package.xml) for fetching Apex, Visualforce, Lightning components, and static
+    resources.
 ```
-
 <!-- commandsstop -->

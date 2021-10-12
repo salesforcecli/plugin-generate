@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/salesforcecli/plugin-generate/compare/v1.0.3...v1.0.4) (2021-10-12)
+
+
+### Bug Fixes
+
+* bump sf-plugins-core ([288e69c](https://github.com/salesforcecli/plugin-generate/commit/288e69ce253c26d9c034d3a05864f3aa66c9a11f))
+
 ### [1.0.3](https://github.com/salesforcecli/plugin-generate/compare/v1.0.2...v1.0.3) (2021-10-12)
 
 ### [1.0.2](https://github.com/salesforcecli/plugin-generate/compare/v1.0.1...v1.0.2) (2021-10-11)

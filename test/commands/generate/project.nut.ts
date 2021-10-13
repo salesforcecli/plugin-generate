@@ -35,7 +35,6 @@ describe('generate project NUTs', () => {
       osPath('testProj/config/project-scratch-def.json'),
       osPath('testProj/README.md'),
       osPath('testProj/sfdx-project.json'),
-      osPath('testProj/.husky/pre-commit'),
       osPath('testProj/.vscode/extensions.json'),
       osPath('testProj/.vscode/launch.json'),
       osPath('testProj/.vscode/settings.json'),

@@ -61,7 +61,7 @@ export abstract class TemplateCommand extends SfCommand<CreateOutput> {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     await env.run('generator', options); // eslint-disable-line @typescript-eslint/await-thenable
-    const targetDir = path.resolve(options.outputdir);
+    const targetDir = path.resolve(options.outputdir as string);
     if (!options.json) {
       this.log(messages.getMessage('TargetDirOutput', [targetDir]));
       this.log(adapter.log.getOutput());

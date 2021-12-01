@@ -909,9 +909,9 @@
     inquirer "^8.2.0"
 
 "@salesforce/templates@^52.4.0":
-  version "52.4.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-52.4.0.tgz#adc00af36fb8ecdf2a454ee6f5a83ccbf92f8539"
-  integrity sha512-E3po85LHosjJOwQSgsV87lj5gBgzOK2J9t4Ibi7ZiDbFnX4fA5X2FMiFldqnjHD6kHfDcEmmkISWlB6wJJ319A==
+  version "52.6.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-52.6.0.tgz#5ab99b5e61c4a4c75ba4ae49d01dcb0425432b0a"
+  integrity sha512-3/wNJ4A6aQTchwGvdbXqvNA1cnne4TZRQ0mr0IvdFFYNoeefSS1fISW+LR8vJLZkV/9CJWzLCxfWzhEHDkp2JA==
   dependencies:
     "@salesforce/core" "2.28.0"
     got "^11.8.2"

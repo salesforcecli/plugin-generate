@@ -542,15 +542,38 @@
     is-wsl "^2.1.1"
     tslib "^2.0.0"
 
-"@oclif/core@^1.0.0", "@oclif/core@^1.0.1", "@oclif/core@^1.0.2", "@oclif/core@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.npmjs.org/@oclif/core/-/core-1.0.7.tgz#3f3b38774aecc7c09902beb9f424735149b6b3ba"
-  integrity sha512-bIaf3zM9YSo8SJq/fN8dfHjmDmZ6QmC3UCWpoykvl7UH2Prt5aCfdAJH/y3HrXVgWPYi+ByrXdzje1Mwgnq4dQ==
+"@oclif/core@1.0.10":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.0.10.tgz#5fd01d572e44d372b7279ee0f49b4860e14b6e4e"
+  integrity sha512-L+IcNU3NoYxwz5hmHfcUlOJ3dpgHRsIj1kAmI9CKEJHq5gBVKlP44Ot179Jke1jKRKX2g9N42izbmlh0SNpkkw==
   dependencies:
     "@oclif/linewrap" "^1.0.0"
     chalk "^4.1.2"
     clean-stack "^3.0.1"
-    cli-ux "^6.0.3"
+    cli-ux "6.0.5"
+    debug "^4.3.3"
+    fs-extra "^9.1.0"
+    get-package-type "^0.1.0"
+    globby "^11.0.4"
+    indent-string "^4.0.0"
+    is-wsl "^2.2.0"
+    lodash "^4.17.21"
+    semver "^7.3.5"
+    string-width "^4.2.3"
+    strip-ansi "^6.0.1"
+    tslib "^2.3.1"
+    widest-line "^3.1.0"
+    wrap-ansi "^7.0.0"
+
+"@oclif/core@^1.0.0", "@oclif/core@^1.0.1", "@oclif/core@^1.0.10", "@oclif/core@^1.0.7", "@oclif/core@^1.0.8":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.0.11.tgz#5ad1258c0c756073744ac8b9403e9314757d949f"
+  integrity sha512-CQw9dbzh+BTF73cp53mnDZnTJF4hth7oab761Si4pEW18PDYDLyOv7TnEtJkvPu4rlTaGBh2jge9BDXgwye4vQ==
+  dependencies:
+    "@oclif/linewrap" "^1.0.0"
+    chalk "^4.1.2"
+    clean-stack "^3.0.1"
+    cli-ux "6.0.5"
     debug "^4.3.3"
     fs-extra "^9.1.0"
     get-package-type "^0.1.0"
@@ -675,7 +698,7 @@
     lodash "^4.17.21"
     semver "^7.3.2"
 
-"@oclif/screen@^1.0.3", "@oclif/screen@^1.0.4":
+"@oclif/screen@^1.0.3", "@oclif/screen@^1.0.4", "@oclif/screen@^1.0.4 ":
   version "1.0.4"
   resolved "https://registry.npmjs.org/@oclif/screen/-/screen-1.0.4.tgz#b740f68609dfae8aa71c3a6cab15d816407ba493"
   integrity sha512-60CHpq+eqnTxLZQ4PGHYNwUX572hgpMHGPtTWMjdTMsAvlm69lZV/4ly6O3sAYkomo4NggGcomrDpBe34rxUqw==
@@ -853,15 +876,15 @@
   integrity sha512-6D7DvE6nFxpLyyTnrOIbbAeCJw2r/EpinFAcMh6gU0gA/CGfSbwV/8uR3uHLYL2zCyCZLH8jJ4dZ3BzCMqc+Eg==
 
 "@salesforce/sf-plugins-core@^1.0.0", "@salesforce/sf-plugins-core@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/@salesforce/sf-plugins-core/-/sf-plugins-core-1.0.4.tgz#53c1a6a90d8ca7350f007ba5ff397327c843518e"
-  integrity sha512-E/UPSzV3UoV0YC4hfmJHHoFF5o7sEBbbSo4SIlCsNGar3KVF4fL/CKhoB9VL1j3XDLqZ9V7/494f6I4MTO2Glg==
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-1.0.5.tgz#085a89c291981df24359c701aa81677d28537b94"
+  integrity sha512-LgL5ASqVGYPdQ5SxThmEwIxNqxf5CrbyfdzrHhZClvarMzyPQ8z4qpQRnQvLdYUp5KaU6ASK8SuB4F7cilE1kg==
   dependencies:
-    "@oclif/core" "^1.0.2"
+    "@oclif/core" "^1.0.10"
     "@salesforce/core" "3.6.6"
     "@salesforce/kit" "^1.5.17"
     "@salesforce/ts-types" "^1.5.20"
-    cli-ux "^5.6.3"
+    cli-ux "^6.0.6"
     inquirer "^8.2.0"
 
 "@salesforce/templates@^52.4.0":
@@ -2152,6 +2175,37 @@ cli-truncate@2.1.0, cli-truncate@^2.1.0:
     slice-ansi "^3.0.0"
     string-width "^4.2.0"
 
+cli-ux@6.0.5:
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-6.0.5.tgz#5461dffb6c29e4a727e071f8b74bbebcc6b7be08"
+  integrity sha512-q2pvzDiXMNISMqCBh0P2dkofQ/8OiWlEAjl6MDNk5oUZ6p54Fnk1rOaXxohYm+YkLX5YNUonGOrwkvuiwVreIg==
+  dependencies:
+    "@oclif/core" "^1.0.8"
+    "@oclif/linewrap" "^1.0.0"
+    "@oclif/screen" "^1.0.4 "
+    ansi-escapes "^4.3.0"
+    ansi-styles "^4.2.0"
+    cardinal "^2.1.1"
+    chalk "^4.1.0"
+    clean-stack "^3.0.0"
+    cli-progress "^3.9.1"
+    extract-stack "^2.0.0"
+    fs-extra "^8.1"
+    hyperlinker "^1.0.0"
+    indent-string "^4.0.0"
+    is-wsl "^2.2.0"
+    js-yaml "^3.13.1"
+    lodash "^4.17.21"
+    natural-orderby "^2.0.1"
+    object-treeify "^1.1.4"
+    password-prompt "^1.1.2"
+    semver "^7.3.2"
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    supports-color "^8.1.0"
+    supports-hyperlinks "^2.1.0"
+    tslib "^2.0.0"
+
 cli-ux@^4.9.0:
   version "4.9.3"
   resolved "https://registry.npmjs.org/cli-ux/-/cli-ux-4.9.3.tgz#4c3e070c1ea23eef010bbdb041192e0661be84ce"
@@ -2179,7 +2233,7 @@ cli-ux@^4.9.0:
     treeify "^1.1.0"
     tslib "^1.9.3"
 
-cli-ux@^5.6.3, cli-ux@^5.6.4, cli-ux@^5.6.5:
+cli-ux@^5.6.4, cli-ux@^5.6.5:
   version "5.6.5"
   resolved "https://registry.npmjs.org/cli-ux/-/cli-ux-5.6.5.tgz#d2a73070fb73d77d6adf6cb51592b6f04b31deb9"
   integrity sha512-FjC69Z13a5iMuo6mNjXaA+/qNO1vdJvoHPAGKqULIMVAuhff6DMPU5hbk5ygHoIQWkU9RsgeAup9tV97pXJ7fQ==
@@ -2211,14 +2265,14 @@ cli-ux@^5.6.3, cli-ux@^5.6.4, cli-ux@^5.6.5:
     supports-hyperlinks "^2.1.0"
     tslib "^2.0.0"
 
-cli-ux@^6.0.3:
-  version "6.0.4"
-  resolved "https://registry.npmjs.org/cli-ux/-/cli-ux-6.0.4.tgz#36acb0a30fda27a6c59686a44d783b7c92a3dad0"
-  integrity sha512-9B7pLM1kPXQTHHvZtEKHLpJc9BDHIHZOWuPmJX/O+ZSO8zKmfV9A1rRiq8HNOMG7+Yuy3rtCgFqFl/KB7ZnYiQ==
+cli-ux@^6.0.6:
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-6.0.6.tgz#00536bf6038f195b0a1a2589f61ce5e625e75870"
+  integrity sha512-CvL4qmV78VhnbyHTswGjpDSQtU+oj3hT9DP9L6yMOwiTiNv0nMjMEV/8zou4CSqO6PtZ2A8qnlZDgAc07Js+aw==
   dependencies:
-    "@oclif/core" "^1.0.7"
+    "@oclif/core" "1.0.10"
     "@oclif/linewrap" "^1.0.0"
-    "@oclif/screen" "^1.0.3"
+    "@oclif/screen" "^1.0.4 "
     ansi-escapes "^4.3.0"
     ansi-styles "^4.2.0"
     cardinal "^2.1.1"

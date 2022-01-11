@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.8](https://github.com/salesforcecli/plugin-generate/compare/v1.0.7...v1.0.8) (2022-01-11)
+
+### Bug Fixes
+
+- bump deps v53 of templates ([64b16f6](https://github.com/salesforcecli/plugin-generate/commit/64b16f6c85197722a60ab3a36acc08562012ae47))
+
 ### [1.0.7](https://github.com/salesforcecli/plugin-generate/compare/v1.0.6...v1.0.7) (2022-01-11)
 
 ### [1.0.6](https://github.com/salesforcecli/plugin-generate/compare/v1.0.5...v1.0.6) (2022-01-06)

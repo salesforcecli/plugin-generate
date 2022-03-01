@@ -1464,16 +1464,19 @@
   integrity sha512-ACDlMVhoLIA3VQPFKtJWlr3evUE3DaEbVxi1ukivBRNB1havMW+vo2J0+hNURF19yiqs7iu+yUHLG25bCi2xcw==
 
 "@types/yeoman-environment@*", "@types/yeoman-environment@^2.10.5":
-  version "2.10.5"
-  resolved "https://registry.npmjs.org/@types/yeoman-environment/-/yeoman-environment-2.10.5.tgz#822d4c634f878e1f168231d1e511110897d7b82e"
-  integrity sha512-L2L/WQFV3O3aEyGsx8wbrt6/qfngvUnFtEOS2P8G3qYDQv9ycozHOnXY40vbZSNXEWVXH1G0haqoW2fCSSTqQA==
+  version "2.10.6"
+  resolved "https://registry.yarnpkg.com/@types/yeoman-environment/-/yeoman-environment-2.10.6.tgz#f6344c2e2fe6aa24646fe3ce942f0c3eb92a8e9e"
+  integrity sha512-LxouMcULWzEr919MQ82g0qPc7JypnldWA1IVMFUcnqn8nWKt2jjxK8RyxUohxzVDG2ou9EH1upt2jGqprhcnNA==
   dependencies:
     "@types/diff" "*"
     "@types/inquirer" "*"
     "@types/mem-fs" "*"
     "@types/text-table" "*"
+    "@types/vinyl" "*"
     "@types/yeoman-generator" "*"
     chalk "^4.1.0"
+    commander "^9.0.0"
+    execa "^5.0.0"
     rxjs "^6.4.0"
 
 "@types/yeoman-generator@*", "@types/yeoman-generator@^5.2.5":
@@ -2709,6 +2712,11 @@ commander@^8.2.0:
   version "8.3.0"
   resolved "https://registry.npmjs.org/commander/-/commander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
   integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
+
+commander@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-9.0.0.tgz#86d58f24ee98126568936bd1d3574e0308a99a40"
+  integrity sha512-JJfP2saEKbQqvW+FI93OYUB4ByV5cizMpFMiiJI8xDbBvQvSkIk0VvQdn1CZ8mqAO8Loq2h0gYTYtDFUZUeERw==
 
 comment-parser@1.1.6-beta.0:
   version "1.1.6-beta.0"

@@ -127,8 +127,7 @@ describe('generate project NUTs', () => {
   it('should fail to create a project when not given a name', () => {
     const command = 'generate project';
     const shellOutput = execCmd<CreateOutput>(command, { cli: 'sf', ensureExitCode: 1 }).shellOutput;
-
-    expect(shellOutput).to.include('Error: Missing required flag:\n -n, --name NAME');
-    expect(shellOutput).to.include('Name of the generated project.');
+    expect(shellOutput.stderr).to.include('Error: Missing required flag:\n -n, --name NAME');
+    expect(shellOutput.stderr).to.include('Name of the generated project.');
   });
 });

@@ -1552,9 +1552,9 @@
   integrity sha512-ACDlMVhoLIA3VQPFKtJWlr3evUE3DaEbVxi1ukivBRNB1havMW+vo2J0+hNURF19yiqs7iu+yUHLG25bCi2xcw==
 
 "@types/yeoman-environment@*", "@types/yeoman-environment@^2.10.6":
-  version "2.10.6"
-  resolved "https://registry.yarnpkg.com/@types/yeoman-environment/-/yeoman-environment-2.10.6.tgz#f6344c2e2fe6aa24646fe3ce942f0c3eb92a8e9e"
-  integrity sha512-LxouMcULWzEr919MQ82g0qPc7JypnldWA1IVMFUcnqn8nWKt2jjxK8RyxUohxzVDG2ou9EH1upt2jGqprhcnNA==
+  version "2.10.7"
+  resolved "https://registry.yarnpkg.com/@types/yeoman-environment/-/yeoman-environment-2.10.7.tgz#3aad1480a2c6a2e6c28b7f2ff1161b98c9d3e60c"
+  integrity sha512-74+PN82IHkOGFAAYOaYNCj428vdQfd+bcP40i6EtC6a+F41YlHTNCx6Rs06MArQTX7uc6qAwcXqufAoIQ2HLiQ==
   dependencies:
     "@types/diff" "*"
     "@types/inquirer" "*"
@@ -7952,14 +7952,7 @@ rxjs@^6.4.0, rxjs@^6.6.0, rxjs@^6.6.3:
   dependencies:
     tslib "^1.9.0"
 
-rxjs@^7.2.0, rxjs@^7.4.0:
-  version "7.4.0"
-  resolved "https://registry.npmjs.org/rxjs/-/rxjs-7.4.0.tgz#a12a44d7eebf016f5ff2441b87f28c9a51cebc68"
-  integrity sha512-7SQDi7xeTMCJpqViXh8gL/lebcwlp3d831F05+9B44A4B0WfsEwUQHR64gsH1kvJ+Ep/J9K2+n1hVl1CsGN23w==
-  dependencies:
-    tslib "~2.1.0"
-
-rxjs@^7.5.5:
+rxjs@^7.2.0, rxjs@^7.4.0, rxjs@^7.5.5:
   version "7.5.5"
   resolved "https://registry.npmjs.org/rxjs/-/rxjs-7.5.5.tgz#2ebad89af0f560f460ad5cc4213219e1f7dd4e9f"
   integrity sha512-sy+H0pQofO95VDmFLzyaw9xNJU4KTRSwQIGM6+iG3SypAtCiLDzpeG8sJrNCWn2Up9km+KhkvTdbkrdy+yzZdw==
@@ -8904,11 +8897,6 @@ tslib@^2, tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.2.0, tslib@^2.3.1:
   version "2.3.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
-
-tslib@~2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
-  integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
 
 tsutils@^3.21.0:
   version "3.21.0"

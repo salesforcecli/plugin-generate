@@ -1486,9 +1486,9 @@
   integrity sha512-ACDlMVhoLIA3VQPFKtJWlr3evUE3DaEbVxi1ukivBRNB1havMW+vo2J0+hNURF19yiqs7iu+yUHLG25bCi2xcw==
 
 "@types/yeoman-environment@*", "@types/yeoman-environment@^2.10.6":
-  version "2.10.6"
-  resolved "https://registry.yarnpkg.com/@types/yeoman-environment/-/yeoman-environment-2.10.6.tgz#f6344c2e2fe6aa24646fe3ce942f0c3eb92a8e9e"
-  integrity sha512-LxouMcULWzEr919MQ82g0qPc7JypnldWA1IVMFUcnqn8nWKt2jjxK8RyxUohxzVDG2ou9EH1upt2jGqprhcnNA==
+  version "2.10.7"
+  resolved "https://registry.yarnpkg.com/@types/yeoman-environment/-/yeoman-environment-2.10.7.tgz#3aad1480a2c6a2e6c28b7f2ff1161b98c9d3e60c"
+  integrity sha512-74+PN82IHkOGFAAYOaYNCj428vdQfd+bcP40i6EtC6a+F41YlHTNCx6Rs06MArQTX7uc6qAwcXqufAoIQ2HLiQ==
   dependencies:
     "@types/diff" "*"
     "@types/inquirer" "*"

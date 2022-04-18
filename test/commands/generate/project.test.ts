@@ -5,6 +5,7 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
+import * as path from 'path';
 import { use as chaiUse, expect } from 'chai';
 import * as sinon from 'sinon';
 import * as sinonChai from 'sinon-chai';
@@ -63,7 +64,7 @@ describe('./src/commands/generate/project.ts', () => {
         loginurl: 'theBestLoginUrlEver',
         manifest: true,
         ns: '',
-        outputdir: 'theBestOutputDirEver',
+        outputdir: `${process.cwd()}${path.sep}theBestOutputDirEver`,
         projectname: 'theBestProjectEver',
         template: 'empty',
       });

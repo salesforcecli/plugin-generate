@@ -5,6 +5,9 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
+import * as fs from 'fs';
+import * as path from 'path';
+import * as os from 'os';
 import { Flags } from '@oclif/core';
 import { Messages } from '@salesforce/core';
 import ProjectGenerator from '@salesforce/templates/lib/generators/projectGenerator';
@@ -51,7 +54,7 @@ export default class GenerateProject extends TemplateCommand {
       description: messages.getMessage('flags.namespace.description'),
       default: '',
     }),
-    'output-dir': Flags.string({
+    'output-dir': Flags.directory({
       char: 'd',
       summary: messages.getMessage('flags.output-dir.summary'),
       description: messages.getMessage('flags.output-dir.description'),
@@ -79,6 +82,24 @@ export default class GenerateProject extends TemplateCommand {
       template: flags.template,
     };
 
-    return this.runGenerator(ProjectGenerator, options);
+    options.outputdir = await this.createOutputDir(flags['output-dir']);
+
+    return await this.runGenerator(ProjectGenerator, options);
+  }
+
+  private async createOutputDir(outputDir: string): Promise<string> {
+    let dir = outputDir;
+    if (dir === '.') {
+      return dir;
+    }
+    if (path.isAbsolute(dir)) {
+      return dir;
+    }
+    if (dir.startsWith('~')) {
+      dir = path.join(os.homedir(), dir.slice(1));
+    }
+    const resolvedPath = path.resolve(dir);
+    await fs.promises.mkdir(resolvedPath, { recursive: true });
+    return resolvedPath;
   }
 }

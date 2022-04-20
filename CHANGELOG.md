@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.12](https://github.com/salesforcecli/plugin-generate/compare/v1.0.11...v1.0.12) (2022-04-20)
+
+### Bug Fixes
+
+- output-dir with subdirs is not handled properly ([7592851](https://github.com/salesforcecli/plugin-generate/commit/759285115384c211d6dd9ab9f16d211ed6c1c034))
+
 ### [1.0.11](https://github.com/salesforcecli/plugin-generate/compare/v1.0.10...v1.0.11) (2022-04-19)
 
 ### Bug Fixes

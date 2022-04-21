@@ -115,7 +115,7 @@ describe('./src/utils/templateCommand.ts', () => {
       const result = await test.getApiVersion();
 
       expect(createCASpy).to.have.been.calledOnce;
-      expect(getPropValueCAStub).to.have.been.calledOnceWith('apiVersion');
+      expect(getPropValueCAStub).to.have.been.calledOnceWith('org-api-version');
 
       expect(result).to.equal(1);
     });

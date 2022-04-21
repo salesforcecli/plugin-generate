@@ -1050,10 +1050,10 @@
     mkdirp "1.0.4"
     ts-retry-promise "^0.6.0"
 
-"@salesforce/core@^3.12.2":
-  version "3.12.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.12.2.tgz#09ee9d3c2cc4936cf4d1dcdcbcec436d798c14fb"
-  integrity sha512-Bodqtis6z770ldH/zUKVAwTTw7wh3QGtL9H5EXmFmV8fe2aOORzIXN7J1wbMu0g5DY+EXV7LEqOkHFwSENdQiQ==
+"@salesforce/core@^3.13.0":
+  version "3.13.0"
+  resolved "https://registry.npmjs.org/@salesforce/core/-/core-3.13.0.tgz#7288858dc0734ef50332606e9f3d0633eef54f1f"
+  integrity sha512-ZhjcF3VN8etF/R6M+x6tnI2fDB7gkdUH/tQNjf1plmXyqRiyJ4gcTK4c6RRcemP/SMRme7qt9nqlGxJk6N4v5A==
   dependencies:
     "@salesforce/bunyan" "^2.0.0"
     "@salesforce/kit" "^1.5.34"

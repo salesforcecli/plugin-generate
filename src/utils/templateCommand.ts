@@ -10,7 +10,7 @@ import * as path from 'path';
 import * as yeoman from 'yeoman-environment';
 import * as yeomanGenerator from 'yeoman-generator';
 
-import { ConfigAggregator, Messages } from '@salesforce/core';
+import { ConfigAggregator, Messages, OrgConfigProperties } from '@salesforce/core';
 import { SfCommand } from '@salesforce/sf-plugins-core';
 import { ForceGeneratorAdapter } from '@salesforce/templates/lib/utils';
 import { CreateOutput } from '@salesforce/templates/lib/utils/types';
@@ -23,8 +23,6 @@ Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages('@salesforce/plugin-generate', 'templateCommand');
 
 export abstract class TemplateCommand extends SfCommand<CreateOutput> {
-  private static API_VERSION = 'apiVersion';
-
   public static buildJson(adapter: ForceGeneratorAdapter, targetDir: string): CreateOutput {
     const cleanOutput = adapter.log.getCleanOutput();
     const rawOutput = `target dir = ${targetDir}\n${adapter.log.getOutput()}`;
@@ -39,7 +37,7 @@ export abstract class TemplateCommand extends SfCommand<CreateOutput> {
   public static async getApiVersion(): Promise<string> {
     try {
       const aggregator = await ConfigAggregator.create();
-      const apiVersionFromConfig = aggregator.getPropertyValue(TemplateCommand.API_VERSION);
+      const apiVersionFromConfig = aggregator.getPropertyValue(OrgConfigProperties.ORG_API_VERSION);
       return (apiVersionFromConfig as string) || defaultApiVersion;
     } catch (err) {
       return defaultApiVersion;

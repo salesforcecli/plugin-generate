@@ -87,7 +87,7 @@
     ],
     "topics": {
       "generate": {
-        "description": "Commands to generate things from templates."
+        "description": "Commands to generate a project, create a function, and more."
       }
     }
   },

@@ -33,6 +33,7 @@ describe('./src/utils/templateCommand.ts', () => {
 
   describe('template command', () => {
     class test extends TemplateCommand {
+      // eslint-disable-next-line class-methods-use-this
       public async run(): Promise<CreateOutput> {
         return {} as CreateOutput;
       }

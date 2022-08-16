@@ -82,24 +82,24 @@ export default class GenerateProject extends TemplateCommand {
       template: flags.template,
     };
 
-    options.outputdir = await this.createOutputDir(flags['output-dir']);
+    options.outputdir = await createOutputDir(flags['output-dir']);
 
-    return await this.runGenerator(ProjectGenerator, options);
-  }
-
-  private async createOutputDir(outputDir: string): Promise<string> {
-    let dir = outputDir;
-    if (dir === '.') {
-      return dir;
-    }
-    if (path.isAbsolute(dir)) {
-      return dir;
-    }
-    if (dir.startsWith('~')) {
-      dir = path.join(os.homedir(), dir.slice(1));
-    }
-    const resolvedPath = path.resolve(dir);
-    await fs.promises.mkdir(resolvedPath, { recursive: true });
-    return resolvedPath;
+    return this.runGenerator(ProjectGenerator, options);
   }
 }
+
+const createOutputDir = async (outputDir: string): Promise<string> => {
+  let dir = outputDir;
+  if (dir === '.') {
+    return dir;
+  }
+  if (path.isAbsolute(dir)) {
+    return dir;
+  }
+  if (dir.startsWith('~')) {
+    dir = path.join(os.homedir(), dir.slice(1));
+  }
+  const resolvedPath = path.resolve(dir);
+  await fs.promises.mkdir(resolvedPath, { recursive: true });
+  return resolvedPath;
+};

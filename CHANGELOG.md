@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.16](https://github.com/salesforcecli/plugin-generate/compare/v1.0.15...v1.0.16) (2022-09-06)
+
+### Bug Fixes
+
+- update dependencies ([c3683ba](https://github.com/salesforcecli/plugin-generate/commit/c3683ba3936f79388436c3996ea2b0d58df5d8c2))
+
 ### [1.0.15](https://github.com/salesforcecli/plugin-generate/compare/v1.0.14...v1.0.15) (2022-08-16)
 
 ### Bug Fixes

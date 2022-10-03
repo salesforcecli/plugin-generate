@@ -26,7 +26,7 @@ describe('generate project NUTs', () => {
   env.setString('TESTKIT_EXECUTABLE_PATH', path.join(process.cwd(), 'bin', 'dev'));
 
   before('prepare session and ensure environment variables', async () => {
-    testSession = await TestSession.create({ authStrategy: 'NONE' });
+    testSession = await TestSession.create();
     testDir = path.basename(testSession.dir);
 
     const osPath = (p: string): string => path.join(testDir, p);

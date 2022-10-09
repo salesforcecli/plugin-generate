@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/plugin-generate",
   "description": "Commands to generate Salesforce projects from templates.",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "author": "Salesforce",
   "bugs": "https://github.com/forcedotcom/cli/issues",
   "dependencies": {
@@ -14,7 +14,7 @@
     "yeoman-generator": "^5.7.0"
   },
   "devDependencies": {
-    "@oclif/plugin-command-snapshot": "^3.2.0",
+    "@oclif/plugin-command-snapshot": "^3.2.2",
     "@salesforce/cli-plugins-testkit": "^3.0.1",
     "@salesforce/dev-config": "^3.0.0",
     "@salesforce/dev-scripts": "^3.1.0",
@@ -27,7 +27,7 @@
     "@types/yeoman-environment": "^2.10.8",
     "@types/yeoman-generator": "^5.2.11",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
-    "@typescript-eslint/parser": "^5.38.1",
+    "@typescript-eslint/parser": "^5.39.0",
     "chai": "^4.3.6",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",

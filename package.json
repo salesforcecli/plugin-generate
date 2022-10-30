@@ -7,7 +7,7 @@
   "dependencies": {
     "@oclif/core": "^1.18.0",
     "@salesforce/core": "^3.31.10",
-    "@salesforce/sf-plugins-core": "^1.17.0",
+    "@salesforce/sf-plugins-core": "^1.17.1",
     "@salesforce/templates": "^55.1.0",
     "tslib": "^2",
     "yeoman-environment": "^3.12.1",

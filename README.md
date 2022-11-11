@@ -4,7 +4,7 @@
 
 # plugin-&lt;REPLACE ME&gt;
 
-[![NPM](https://img.shields.io/npm/v/@salesforce/plugin-generate.svg?label=@salesforce/plugin-generate)](https://www.npmjs.com/package/@salesforce/plugin-generate) [![CircleCI](https://circleci.com/gh/salesforcecli/plugin-generate/tree/main.svg?style=shield)](https://circleci.com/gh/salesforcecli/plugin-generate/tree/main) [![Downloads/week](https://img.shields.io/npm/dw/@salesforce/plugin-generate.svg)](https://npmjs.org/package/@salesforce/plugin-generate) [![License](https://img.shields.io/badge/License-BSD%203--Clause-brightgreen.svg)](https://raw.githubusercontent.com/salesforcecli/plugin-generate/main/LICENSE.txt)
+[![NPM](https://img.shields.io/npm/v/@salesforce/plugin-generate.svg?label=@salesforce/plugin-generate)](https://www.npmjs.com/package/@salesforce/plugin-generate) [![Downloads/week](https://img.shields.io/npm/dw/@salesforce/plugin-generate.svg)](https://npmjs.org/package/@salesforce/plugin-generate) [![License](https://img.shields.io/badge/License-BSD%203--Clause-brightgreen.svg)](https://raw.githubusercontent.com/salesforcecli/plugin-generate/main/LICENSE.txt)
 
 Change above to <REPLACE_ME> before finalizing
 
@@ -97,7 +97,8 @@ sfdx plugins
 ## Commands
 
 <!-- commands -->
-* [`sf generate project`](#sf-generate-project)
+
+- [`sf generate project`](#sf-generate-project)
 
 ## `sf generate project`
 
@@ -194,4 +195,5 @@ FLAG DESCRIPTIONS
     Generates a default manifest (package.xml) for fetching Apex, Visualforce, Lightning components, and static
     resources.
 ```
+
 <!-- commandsstop -->

@@ -10,7 +10,7 @@
     "@salesforce/sf-plugins-core": "^1.21.0",
     "@salesforce/templates": "^55.1.0",
     "tslib": "^2",
-    "yeoman-environment": "^3.12.1",
+    "yeoman-environment": "^3.13.0",
     "yeoman-generator": "^5.7.0"
   },
   "devDependencies": {

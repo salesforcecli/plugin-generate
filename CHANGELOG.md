@@ -1,3 +1,12 @@
+## [1.0.40](https://github.com/salesforcecli/plugin-generate/compare/1.0.39...1.0.40) (2022-12-25)
+
+
+### Bug Fixes
+
+* **deps:** bump @salesforce/core from 3.32.11 to 3.32.12 ([5085359](https://github.com/salesforcecli/plugin-generate/commit/5085359cb140751477eb581371ac37ca1fd9cfd8))
+
+
+
 ## [1.0.39](https://github.com/salesforcecli/plugin-generate/compare/1.0.38...1.0.39) (2022-12-18)
 
 

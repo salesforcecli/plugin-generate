@@ -1,3 +1,12 @@
+## [1.0.41](https://github.com/salesforcecli/plugin-generate/compare/1.0.40...1.0.41) (2022-12-25)
+
+
+### Bug Fixes
+
+* **deps:** bump @salesforce/sf-plugins-core from 1.21.1 to 1.21.3 ([dbebd6d](https://github.com/salesforcecli/plugin-generate/commit/dbebd6db99c7efc29e3a4539f1154293002e0ee4))
+
+
+
 ## [1.0.40](https://github.com/salesforcecli/plugin-generate/compare/1.0.39...1.0.40) (2022-12-25)
 
 

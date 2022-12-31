@@ -1,3 +1,12 @@
+## [1.0.42](https://github.com/salesforcecli/plugin-generate/compare/1.0.41...1.0.42) (2022-12-31)
+
+
+### Bug Fixes
+
+* **deps:** bump @oclif/core from 1.22.0 to 1.23.0 ([ae7f79e](https://github.com/salesforcecli/plugin-generate/commit/ae7f79ec4a449d502c25f7b6cc5bdb577f0373e2))
+
+
+
 ## [1.0.41](https://github.com/salesforcecli/plugin-generate/compare/1.0.40...1.0.41) (2022-12-25)
 
 

@@ -1,3 +1,12 @@
+## [1.0.43](https://github.com/salesforcecli/plugin-generate/compare/1.0.42...1.0.43) (2023-01-08)
+
+
+### Bug Fixes
+
+* **deps:** bump json5 from 1.0.1 to 1.0.2 ([a9e68fe](https://github.com/salesforcecli/plugin-generate/commit/a9e68fe9f6038d4b76849da7bf6494643f9fe7d7))
+
+
+
 ## [1.0.42](https://github.com/salesforcecli/plugin-generate/compare/1.0.41...1.0.42) (2022-12-31)
 
 

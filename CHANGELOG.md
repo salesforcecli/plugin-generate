@@ -1,3 +1,12 @@
+## [1.0.45](https://github.com/salesforcecli/plugin-generate/compare/1.0.44...1.0.45) (2023-01-29)
+
+
+### Bug Fixes
+
+* **deps:** bump tslib from 2.4.1 to 2.5.0 ([81819d6](https://github.com/salesforcecli/plugin-generate/commit/81819d6a8f3d72c9c84e973b44332dd85f36d74a))
+
+
+
 ## [1.0.44](https://github.com/salesforcecli/plugin-generate/compare/1.0.43...1.0.44) (2023-01-08)
 
 

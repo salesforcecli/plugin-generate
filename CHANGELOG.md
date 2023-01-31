@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/salesforcecli/plugin-generate/compare/1.0.45...1.1.0) (2023-01-31)
+
+
+### Features
+
+* use sf-plugins-core v2 and oclif/core v2 ([43c3a91](https://github.com/salesforcecli/plugin-generate/commit/43c3a919a5beea4e068102c7f02e2ad2f17bdd16))
+
+
+
 ## [1.0.45](https://github.com/salesforcecli/plugin-generate/compare/1.0.44...1.0.45) (2023-01-29)
 
 

@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/salesforcecli/plugin-generate/compare/1.1.0...1.1.1) (2023-02-04)
+
+
+### Bug Fixes
+
+* **deps:** bump http-cache-semantics from 4.1.0 to 4.1.1 ([2a58dcd](https://github.com/salesforcecli/plugin-generate/commit/2a58dcd0bc2e5621c349dabf8b409e6cb909d860))
+
+
+
 # [1.1.0](https://github.com/salesforcecli/plugin-generate/compare/1.0.45...1.1.0) (2023-01-31)
 
 

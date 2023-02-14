@@ -1,3 +1,7 @@
+> See https://github.com/salesforcecli/plugin-templates for the `project:generate` command
+
+# :octagon: This plugin is deprecated.
+
 ### Use the [lerna template](https://github.com/salesforcecli/lerna-template) if you need a library and plugin
 
 ### This template is useful if the library is already in another repository or the plugin is a wrapper around an API.

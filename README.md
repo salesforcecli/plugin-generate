@@ -1,6 +1,6 @@
 > See https://github.com/salesforcecli/plugin-templates for the `project:generate` command
 
-# :octagon: This plugin is deprecated.
+# :stop_sign: This plugin is deprecated.
 
 ### Use the [lerna template](https://github.com/salesforcecli/lerna-template) if you need a library and plugin
 
